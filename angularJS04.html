@@ -52,7 +52,7 @@ app.controller('personCtrl', function($scope) {
 });
 </script>
 
-<h3> Controllers In External Files </h3>
+    <h3> Controllers In External Files </h3>
 
     <div ng-app="myApp" ng-controller="personCtrl">
 
@@ -64,6 +64,25 @@ app.controller('personCtrl', function($scope) {
     </div>
         
     <script src="personController.js"></script>
+
+    <h1> AngularJS Scope </h1>
+    <p>The scope is the binding part between the HTML (view) and the JavaScript (controller).The scope is an object with the available properties and methods.The scope is available for both the view and the controller.</p>
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+    <h1>{{carname}}</h1>
+        
+    </div>
+        
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.carname = "Volvo";
+    });
+    </script>
+        
+    <p>The property "carname" was made in the controller, and can be referred to in the view by using the {{ }} brackets.</p>
+
 
 
 </body>
