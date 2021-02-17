@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>angular JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
+    <h1>AngularJS Controllers</h1>
+    <p>AngularJS applications are controlled by controllers.</p>
+    <p>The ng-controller directive defines the application controller.
+    A controller is a JavaScript Object, created by a standard JavaScript object constructor.</p>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
+        
+    </div>
+        
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+    });
+    </script>
+
+
+    
     
 </body>
 </html>
