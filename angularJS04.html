@@ -124,6 +124,31 @@ app.controller('personCtrl', function($scope) {
     
         <p>The variable "x" has a different value for each repetition, proving that each repetition has its own scope.</p>
     
+
+    <!-- rootScope -->
+
+    <div ng-controller="myCtrl">
+
+        <p>The scope of the controller's favorite color:</p>
+        <h1>{{color}}</h1>
+    
+        </div>
+    
+        <p>The rootScope's favorite color is still:</p>
+        <h1>{{color}}</h1>
+    
+        <script>
+        var app = angular.module('myApp', []);
+        app.run(function($rootScope) {
+            $rootScope.color = 'blue';
+        });
+        app.controller('myCtrl', function($scope) {
+            $scope.color = "red";
+        });
+        </script>
+    
+        <p>Notice that controller's color variable does not overwrite the rootScope's color value.</p>
+    
     
 </body>
 </html>
